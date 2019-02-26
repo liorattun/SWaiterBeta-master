@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:name="com.example.liorkaramany.swaiterbeta.MainFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".OrdersList"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:textColor="#222222"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:text="Last orders" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ListView
+            android:layout_width="0dp"
+            android:id="@+id/o1"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/o2"
+            android:background="#d4e2f9"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:layout_width="0dp"
+            android:id="@+id/o3"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/o4"
+            android:background="#d4e2f9"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/o5"
+            android:background="#d4e2f9"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:layout_width="0dp"
+            android:id="@+id/o6"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/o7"
+            android:background="#d4e2f9"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/o8"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>
