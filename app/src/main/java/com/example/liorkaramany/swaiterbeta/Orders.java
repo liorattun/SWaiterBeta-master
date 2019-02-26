@@ -37,6 +37,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         list.setAdapter(adapter);
         list.setOnItemClickListener(this);
         getSumOfPrices();
+        //hi
     }
 
 
