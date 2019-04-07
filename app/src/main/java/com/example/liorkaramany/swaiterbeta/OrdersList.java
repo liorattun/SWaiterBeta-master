@@ -18,6 +18,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -44,11 +45,14 @@ public class OrdersList extends Activity {
     List<Dish>[] lists;
     DatabaseReference ref;
     DishListOrders[] adapters;
+    String ph,smsText;
+    Intent t;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders_list);
+
 
         o = new ListView[NUMBER_OF_ORDERS];
 
@@ -135,8 +139,8 @@ public class OrdersList extends Activity {
             lists[i] = new ArrayList<>();
         }
 
-        ref = FirebaseDatabase.getInstance().getReference("orders");
-        ref.addValueEventListener(new ValueEventListener() {
+        ref = FirebaseDatabase.getInstance().getReference();
+        ref.child("orders").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //Clear all the lists.
@@ -151,7 +155,6 @@ public class OrdersList extends Activity {
 
                         if (orderSnapshot.getValue(t) == null) {
                             lists[i] = new ArrayList<>();
-                            //lists[i].add(new Dish("1", "1", 1, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi0hfiBxITgAhVKy6QKHdpkCsoQjRx6BAgBEAU&url=https%3A%2F%2Fwww.target.com%2Fp%2Fcoca-cola-20-fl-oz-bottle%2F-%2FA-12953529&psig=AOvVaw3YHZXEigojTTJ6Unza-eTw&ust=1548354466217800"));
                         } else
                             lists[i] = orderSnapshot.getValue(t);
 
@@ -170,16 +173,29 @@ public class OrdersList extends Activity {
 
     }
 
+    //send sms
+    public void sms() {
+        smsText = "Your order has been prepared and will arrive at your desk in a few minutes. enjoy your meal!";
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(ph, null, smsText, null, null);
+
+    }
+
+    //Deleting Prepared Orders
     public void refresh(){
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int x=0;
-                for (DataSnapshot df:dataSnapshot.getChildren()) {
+                for (DataSnapshot df:dataSnapshot.child("orders").getChildren()) {
                     if (x==i){
                         String name=df.getKey();
-                        ref.child(name).removeValue();
+                        ref.child("orders").child(name).removeValue();
                         Toast.makeText(OrdersList.this,name,Toast.LENGTH_LONG).show();
+                        ph = dataSnapshot.child("phones").child(name).getValue(String.class);
+                        ref.child("phones").child(name).removeValue();
+                        sms();
+                        //bdikat kelet;
                     }
                     x++;
                 }

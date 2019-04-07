@@ -24,7 +24,6 @@ public class DishListOrders extends ArrayAdapter<Dish> {
         super(context, R.layout.list_layout2, dishList);
         this.context = context;
         this.dishList = dishList;
-
     }
 
     @NonNull

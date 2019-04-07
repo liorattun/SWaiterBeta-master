@@ -35,13 +35,10 @@ public class DishList extends ArrayAdapter<Dish> {
         LayoutInflater inflater = context.getLayoutInflater();
 
         View listViewItem = inflater.inflate(R.layout.list_layout, null, true);
-
         TextView tvName = (TextView) listViewItem.findViewById(R.id.tvName);
         TextView tvPrice = (TextView) listViewItem.findViewById(R.id.tvPrice);
         ImageView img = (ImageView) listViewItem.findViewById(R.id.img);
-
         Dish dish = dishList.get(position);
-
         tvName.setText(dish.getName());
         tvPrice.setText(""+dish.getPrice());
         Picasso.get().load(dish.getUrl()).into(img);
