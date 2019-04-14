@@ -23,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.liorattun.swaiterbeta.Main2">
+        <activity android:name="com.example.liorattun.swaiterbeta.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
         <activity android:name="com.example.liorattun.swaiterbeta.DetailsActivity" />
         <activity android:name="com.example.liorattun.swaiterbeta.PlaybackActivity" />
         <activity android:name="com.example.liorattun.swaiterbeta.BrowseErrorActivity" />
-        <activity android:name="com.example.liorattun.swaiterbeta.Main" />
+        <activity android:name="com.example.liorattun.swaiterbeta.NewDish" />
         <activity android:name="com.example.liorattun.swaiterbeta.Edit" />
         <activity android:name="com.example.liorattun.swaiterbeta.Menu" />
         <activity android:name="com.example.liorattun.swaiterbeta.Orders" />

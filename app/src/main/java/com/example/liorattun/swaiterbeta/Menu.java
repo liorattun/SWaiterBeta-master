@@ -276,7 +276,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
             t.putExtra("orders", dishes);
             startActivityForResult(t, 1);
         } else {
-            t = new Intent(this, Main.class);
+            t = new Intent(this, NewDish.class);
             startActivity(t);
         }
     }

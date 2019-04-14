@@ -3,106 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent"
     android:background="@drawable/back"
-    android:orientation="vertical"
     tools:context=".Main">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="70dp"
         android:gravity="center"
-        android:textSize="35dp"
         android:textColor="#ffffff"
-        android:layout_height="wrap_content"
-        android:text="New Dish" />
+        android:text="Swaiter" />
 
-    <EditText
-        android:id="@+id/name"
-        android:textColorHint="#ffffff"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Name" />
-
-    <EditText
-        android:id="@+id/price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="#ffffff"
-        android:inputType="numberDecimal"
-        android:textColorHint="#ffffff"
-        android:hint="Price" />
-
-    <RadioGroup
-        android:id="@+id/group"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content" >
-
-        <RadioButton
-            android:id="@+id/main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_weight="1"
-            android:text="Main" />
-
-        <RadioButton
-            android:id="@+id/desserts"
-            android:layout_width="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Desserts" />
-
-        <RadioButton
-            android:id="@+id/drinks"
-            android:layout_width="wrap_content"
-            android:textColor="#ffffff"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Drinks" />
-    </RadioGroup>
+        android:layout_height="70dp" />
 
     <Button
-        android:onClick="select"
+        android:layout_width="match_parent"
+        android:onClick="press1"
+        android:layout_height="wrap_content"
+        android:text="customer" />
+
+    <Button
+        android:id="@+id/button3"
+        android:onClick="press2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select image" />
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="350dp"
-        android:layout_height="200dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="push"
-            android:text="Push" />
-
-        <Button
-            android:onClick="ba"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="back"/>
-
-    </LinearLayout>
+        android:text="Waiter manager" />
 
 </LinearLayout>

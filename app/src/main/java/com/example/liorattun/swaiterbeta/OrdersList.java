@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Main Activity class that loads {@link MainFragment}.
+ * NewDish Activity class that loads {@link MainFragment}.
  */
 public class OrdersList extends Activity {
     public static final int NUMBER_OF_ORDERS = 8;
