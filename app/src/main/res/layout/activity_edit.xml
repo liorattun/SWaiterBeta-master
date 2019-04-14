@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".Edit">
@@ -13,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="#ffffff"
         android:hint="Name"
         android:inputType="textPersonName" />
 
@@ -20,6 +22,7 @@
         android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#ffffff"
         android:ems="10"
         android:hint="Price"
         android:inputType="numberDecimal" />

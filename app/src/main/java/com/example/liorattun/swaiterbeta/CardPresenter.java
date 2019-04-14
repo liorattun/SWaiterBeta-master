@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
 import android.graphics.drawable.Drawable;
 import android.support.v17.leanback.widget.ImageCardView;

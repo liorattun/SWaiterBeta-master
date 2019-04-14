@@ -12,24 +12,20 @@
  * the License.
  */
 
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
 
-/**
- * Loads {@link PlaybackVideoFragment}.
- */
-public class PlaybackActivity extends FragmentActivity {
+public class DetailsDescriptionPresenter extends AbstractDetailsDescriptionPresenter {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(android.R.id.content, new PlaybackVideoFragment())
-                    .commit();
+    protected void onBindDescription(ViewHolder viewHolder, Object item) {
+        Movie movie = (Movie) item;
+
+        if (movie != null) {
+            viewHolder.getTitle().setText(movie.getTitle());
+            viewHolder.getSubtitle().setText(movie.getStudio());
+            viewHolder.getBody().setText(movie.getDescription());
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.liorkaramany.swaiterbeta">
+    package="com.example.liorattun.swaiterbeta">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
@@ -23,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2">
+        <activity android:name="com.example.liorattun.swaiterbeta.Main2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,19 +31,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OrdersList"
+            android:name="com.example.liorattun.swaiterbeta.OrdersList"
             android:banner="@drawable/app_icon_your_company"
             android:icon="@drawable/app_icon_your_company"
             android:label="@string/title_activity_orders_list"
             android:logo="@drawable/app_icon_your_company"
             android:screenOrientation="landscape" />
-        <activity android:name=".DetailsActivity" />
-        <activity android:name=".PlaybackActivity" />
-        <activity android:name=".BrowseErrorActivity" />
-        <activity android:name=".Main" />
-        <activity android:name=".Edit" />
-        <activity android:name=".Menu" />
-        <activity android:name=".Orders" />
+        <activity android:name="com.example.liorattun.swaiterbeta.DetailsActivity" />
+        <activity android:name="com.example.liorattun.swaiterbeta.PlaybackActivity" />
+        <activity android:name="com.example.liorattun.swaiterbeta.BrowseErrorActivity" />
+        <activity android:name="com.example.liorattun.swaiterbeta.Main" />
+        <activity android:name="com.example.liorattun.swaiterbeta.Edit" />
+        <activity android:name="com.example.liorattun.swaiterbeta.Menu" />
+        <activity android:name="com.example.liorattun.swaiterbeta.Orders" />
     </application>
 
 </manifest>

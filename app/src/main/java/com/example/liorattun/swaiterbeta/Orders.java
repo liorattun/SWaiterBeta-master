@@ -1,6 +1,5 @@
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -60,7 +59,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
            public void onClick(DialogInterface dialogInterface, int i) {
                phone=phnum.getText().toString();
                mail=email.getText().toString();
-               //em();
+               em();
                tofb();
            }
        });
@@ -114,7 +113,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         String x;
         for (int i=0;i<orders.size();i++){
             x=orders.get(i).getName();
-            y+=x+"/n";
+            y+=x+"\n";
 
         }
     }
@@ -130,7 +129,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         ts(orders);
         String emailBody = y;
         //String adminBody = "Your message";
-        new SendMailTask(Orders.this).execute(fromEmail,
+        new SendMailTask(this).execute(fromEmail,
                 fromPassword, toEmails, emailSubject, emailBody);
     }
 
@@ -148,7 +147,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
     public void onBackPressed()
     {
         passOrdersBack();
-        super.onBackPressed();  // optional depending on your needs
+        //super.onBackPressed();  // optional depending on your needs
     }
 
     private void passOrdersBack() {

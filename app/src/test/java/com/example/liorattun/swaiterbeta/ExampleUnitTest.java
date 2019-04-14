@@ -1,4 +1,4 @@
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
 import org.junit.Test;
 

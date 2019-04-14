@@ -1,4 +1,4 @@
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
 import android.Manifest;
 import android.content.Context;

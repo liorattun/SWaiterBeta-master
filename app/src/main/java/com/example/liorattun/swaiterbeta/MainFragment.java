@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
 import android.content.Intent;
 import android.graphics.Color;

@@ -1,9 +1,7 @@
-package com.example.liorkaramany.swaiterbeta;
-import java.util.List;
+package com.example.liorattun.swaiterbeta;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.app.AlertDialog.Builder;
 import android.os.AsyncTask;
 import android.util.Log;
 

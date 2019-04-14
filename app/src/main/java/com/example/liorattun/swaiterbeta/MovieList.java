@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
 import java.util.ArrayList;
 import java.util.List;

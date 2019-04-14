@@ -1,4 +1,4 @@
-package com.example.liorkaramany.swaiterbeta;
+package com.example.liorattun.swaiterbeta;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -275,10 +275,10 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
             //samim et hareshima shell dishes ba Intent.
             t.putExtra("orders", dishes);
             startActivityForResult(t, 1);
+        } else {
+            t = new Intent(this, Main.class);
+            startActivity(t);
         }
-        else
-            t = new Intent(this,Main.class);
-        startActivity(t);
     }
 
 
