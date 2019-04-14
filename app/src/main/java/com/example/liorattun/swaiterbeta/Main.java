@@ -3,6 +3,7 @@ package com.example.liorattun.swaiterbeta;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
@@ -12,11 +13,15 @@ import android.view.View;
 
 public class Main extends AppCompatActivity {
     int num;
+    ConnectionReceiver connectionReceiver;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        connectionReceiver = new ConnectionReceiver();
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // The request code used in ActivityCompat.requestPermissions()
@@ -56,6 +61,26 @@ public class Main extends AppCompatActivity {
         Intent t=new Intent(this, Menu.class) ;
         t.putExtra("num",num);
         startActivity(t);
+    }
+
+    /**
+     * Registers the receiver when the application resumes the activity.
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        registerReceiver(connectionReceiver, new IntentFilter(android.net.ConnectivityManager.CONNECTIVITY_ACTION));
+    }
+
+    /**
+     * Unregisters the receiver when the application stops the activity.
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        unregisterReceiver(connectionReceiver);
     }
 
 
