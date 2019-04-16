@@ -9,6 +9,7 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 public class Main extends AppCompatActivity {
@@ -83,5 +84,20 @@ public class Main extends AppCompatActivity {
         unregisterReceiver(connectionReceiver);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.main2,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id= item.getItemId();
+        if (id==R.id.credits){
+            Intent s = new Intent(this, Credits.class);
+            s.putExtra("s",1);
+            startActivity(s);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

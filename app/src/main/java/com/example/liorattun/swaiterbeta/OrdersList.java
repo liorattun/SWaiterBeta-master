@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.telephony.SmsManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -205,6 +206,23 @@ public class OrdersList extends Activity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+             int id = item.getItemId();
+             if(id==R.id.menu) {
+                Intent s = new Intent(this, Menu.class);
+                s.putExtra("s",1);
+                startActivity(s);
+             }
+        return super.onOptionsItemSelected(item);
     }
 
 }

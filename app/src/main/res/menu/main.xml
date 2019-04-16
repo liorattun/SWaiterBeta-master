@@ -11,6 +11,12 @@
          android:title="menu"
          android:orderInCategory="200"></item>
 
+    <item
+        android:id="@+id/credits"
+        android:title="Credits"
+        android:orderInCategory="300"></item>
+
+
 
 
 </menu>

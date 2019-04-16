@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -144,5 +145,22 @@ public class Edit extends AppCompatActivity {
             img.setImageURI(imageUri);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.main2,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id= item.getItemId();
+        if (id==R.id.credits){
+            Intent s = new Intent(this, Credits.class);
+            s.putExtra("s",1);
+            startActivity(s);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

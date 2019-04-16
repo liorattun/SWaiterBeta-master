@@ -32,7 +32,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
     ArrayList<Dish> dishes;
     DatabaseReference ref;
     Button bt;
-    int num1,id;
+    int num1, id;
     Boolean master;
 
     @Override
@@ -303,25 +303,35 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
-        if(master) {
+        if (master) {
             getMenuInflater().inflate(R.menu.main, menu);
             return true;
         }
+        getMenuInflater().inflate(R.menu.main2, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(master) {
-            id = item.getItemId();
-            if(id==R.id.orders) {
+        id = item.getItemId();
+        if (master) {
+            if (id == R.id.orders) {
                 Intent s = new Intent(this, OrdersList.class);
-                s.putExtra("s",1);
+                s.putExtra("s", 1);
                 startActivity(s);
+            } else if (id == R.id.credits) {
+                Intent t = new Intent(this, Credits.class);
+                t.putExtra("s", 1);
+                startActivity(t);
             }
+            return super.onOptionsItemSelected(item);
+        }
+        if (id == R.id.credits) {
+            Intent t = new Intent(this, Credits.class);
+            t.putExtra("s", 1);
+            startActivity(t);
         }
         return super.onOptionsItemSelected(item);
     }
