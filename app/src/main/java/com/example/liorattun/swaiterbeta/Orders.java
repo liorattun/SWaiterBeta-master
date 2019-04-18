@@ -80,7 +80,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
        ad.show();
     }
 
-
+    //Calculate the total price of the meal
     private void getSumOfPrices() {
         double sum = 0;
         for (int i = 0; i < orders.size(); i++)
@@ -110,6 +110,7 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         Toast.makeText(this, "Your order has been transferred to the kitchen and will begin to be prepared. Please be patient and give the waiter the tablet.", Toast.LENGTH_LONG).show();
     }
 
+    //Create a string of names for all the dishes that the client has selected
     public void ts( ArrayList<Dish> orders){
         String x;
         for (int i=0;i<orders.size();i++){
@@ -125,7 +126,6 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         String fromPassword = "la12062001";
         String toEmails = mail;
         String emailSubject = "YOUR ORDER";
-        //String adminSubject = "App Registration Mail";
         y="";
         ts(orders);
         String emailBody = y;
@@ -158,12 +158,14 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         finish();
     }
 
+    //OptionsMenu
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.main2,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //OptionsMenu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();

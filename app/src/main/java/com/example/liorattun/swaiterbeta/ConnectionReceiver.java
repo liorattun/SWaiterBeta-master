@@ -40,6 +40,7 @@ public class ConnectionReceiver extends BroadcastReceiver {
         boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
 
+        //AlertDialog jump
         if (!isConnected && !hasDisplayed)
         {
             AlertDialog.Builder adb = new AlertDialog.Builder(context);

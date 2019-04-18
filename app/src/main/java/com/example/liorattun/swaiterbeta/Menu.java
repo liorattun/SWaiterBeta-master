@@ -77,7 +77,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
     @Override
     protected void onStart() {
         super.onStart();
-        //Get all the children from the database an display them in the ListView.
+        //Get all the children from the database and display them in the ListView.
         if (choice == 1) {
             d1.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -163,6 +163,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
 
 
     @Override
+    //ContextMenu
     public boolean onContextItemSelected(MenuItem item) {
         if (master) {
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -186,6 +187,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
 
             String oper = item.getTitle().toString();
             if (oper.equals("Delete")) {
+                //Deletes the image of the dish from storage
                 StorageReference ref = FirebaseStorage.getInstance().getReferenceFromUrl(url);
                 ref.delete();
                 deleteDish(id);
@@ -200,6 +202,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
 
 
     public void deleteDish(String id) {
+        //Deletes the desired dish
         if (master) {
             DatabaseReference dr;
             switch (choice) {
@@ -223,6 +226,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
     }
 
     public void editDish(int index) {
+        //Moves to the edit Activity and sends the chosen dish details
         if (master) {
             Dish d = new Dish();
             switch (choice) {
@@ -272,7 +276,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
         Intent t;
         if (!master) {
             t = new Intent(this, Orders.class);
-            //samim et hareshima shell dishes ba Intent.
+            //load the list of selected dishes on the Intent
             t.putExtra("orders", dishes);
             startActivityForResult(t, 1);
         } else {
@@ -283,6 +287,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
 
 
     @Override
+    //Check the selected dish and put it in the list of the customers selected dishes
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         if (!master) {
             Dish dish = null;
@@ -304,6 +309,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
     }
 
     @Override
+    //OptionsMenu
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         if (master) {
             getMenuInflater().inflate(R.menu.main, menu);
@@ -314,6 +320,7 @@ public class Menu extends AppCompatActivity implements View.OnCreateContextMenuL
     }
 
     @Override
+    //OptionsMenu
     public boolean onOptionsItemSelected(MenuItem item) {
         id = item.getItemId();
         if (master) {

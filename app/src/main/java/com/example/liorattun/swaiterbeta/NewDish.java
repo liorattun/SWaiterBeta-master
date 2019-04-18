@@ -85,11 +85,13 @@ public class NewDish extends AppCompatActivity {
     }
 
     public void push(View view) {
+        //Uploading the new dish to the database
         final String n = name.getText().toString();
         final String p = price.getText().toString();
 
         if (!n.isEmpty() && !p.isEmpty() && !p.equals(".") && (main.isChecked() || desserts.isChecked() || drinks.isChecked()) && imageUri != null)
         {
+            //Generate id for the appropriate dish kind
             final String id;
             if (main.isChecked())
                 id = d1.push().getKey();
@@ -118,13 +120,12 @@ public class NewDish extends AppCompatActivity {
                             else {
                                 d3.child(id).setValue(d);
                             }
-
                             Toast.makeText(NewDish.this, "Upload successful", Toast.LENGTH_SHORT).show();
                             progressBar.setProgress(0);
 
                         }
                     });
-
+                    //progressBar
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -143,7 +144,7 @@ public class NewDish extends AppCompatActivity {
             Toast.makeText(this, "You didn't enter all the information", Toast.LENGTH_SHORT).show();
     }
 
-
+    //Select an image from the gallery.
     public void select(View view) {
         Intent t = new Intent();
         t.setType("image/*");
@@ -154,7 +155,7 @@ public class NewDish extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        //Applies image to ImageView
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             img.setImageURI(imageUri);
@@ -168,12 +169,14 @@ public class NewDish extends AppCompatActivity {
 
     }
 
+    //OptionsMenu
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.main2,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //OptionsMenu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();

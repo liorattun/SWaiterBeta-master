@@ -39,6 +39,7 @@ public class Main extends AppCompatActivity {
         }
     }
 
+    //Check for permissions.
     public static boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {
             for (String permission : permissions) {
@@ -50,6 +51,7 @@ public class Main extends AppCompatActivity {
         return true;
     }
 
+    //Transfer to the next screen the User ID: Client / Waiter manager
     public void press1(View view) {
         num=1;
         Intent t=new Intent(this, Menu.class) ;
@@ -84,12 +86,14 @@ public class Main extends AppCompatActivity {
         unregisterReceiver(connectionReceiver);
     }
 
+    //OptionsMenu
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.main2,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //OptionsMenu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();

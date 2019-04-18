@@ -66,7 +66,7 @@ public class OrdersList extends Activity {
         o[7] = (ListView) findViewById(R.id.o8);
 
 
-
+            //Check which list of the 8 was pressed
             o[0].setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
@@ -195,7 +195,6 @@ public class OrdersList extends Activity {
                         ph = dataSnapshot.child("phones").child(name).getValue(String.class);
                         ref.child("phones").child(name).removeValue();
                         sms();
-                        //bdikat kelet;
                     }
                     x++;
                 }
@@ -208,12 +207,14 @@ public class OrdersList extends Activity {
         });
     }
 
+    //OptionsMenu
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //OptionsMenu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
              int id = item.getItemId();

@@ -30,7 +30,6 @@ public class Edit extends AppCompatActivity {
     DatabaseReference df;
     StorageReference ref;
     Intent gt;
-
     String id;
     String n;
     String url;
@@ -66,7 +65,6 @@ public class Edit extends AppCompatActivity {
         ref = FirebaseStorage.getInstance().getReferenceFromUrl(url);
 
         Picasso.get().load(url).into(img);
-
 
         name.setText(n);
         price.setText(""+p);
@@ -129,6 +127,7 @@ public class Edit extends AppCompatActivity {
         finish();
     }
 
+    //Select an image from the gallery.
     public void select(View view) {
         Intent t = new Intent();
         t.setType("image/*");
@@ -139,7 +138,7 @@ public class Edit extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        //Applies image to ImageView
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             img.setImageURI(imageUri);
@@ -147,12 +146,14 @@ public class Edit extends AppCompatActivity {
 
     }
 
+    //OptionsMenu
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.main2,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    //OptionsMenu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();
