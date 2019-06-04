@@ -12,6 +12,7 @@ public class Credits extends AppCompatActivity {
         setContentView(R.layout.activity_credits);
     }
 
+    //back
     public void bo(View view) {
         finish();
     }

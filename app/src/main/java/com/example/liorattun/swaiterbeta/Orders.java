@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,6 +47,8 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
         t= new Intent(this,OrdersList.class);
     }
 
+    boolean sign;
+
     //AlertDialog jump
     public void start(final View view){
        myDialog=(LinearLayout)getLayoutInflater().inflate(R.layout.alert_layout,null);
@@ -58,10 +61,17 @@ public class Orders extends AppCompatActivity implements AdapterView.OnItemClick
        adb.setPositiveButton("done", new DialogInterface.OnClickListener() {
            @Override
            public void onClick(DialogInterface dialogInterface, int i) {
-               phone=phnum.getText().toString();
-               mail=email.getText().toString();
-               em();
-               tofb();
+                   phone = phnum.getText().toString();
+                   mail = email.getText().toString();
+                   //Check the input
+                   if (!Patterns.PHONE.matcher(phone).matches() || phone.length() < 9 || !mail.contains("@")) {
+                       Toast.makeText(Orders.this, "The input recorded is incorrect, please press the SEND button again and re-enter your information", Toast.LENGTH_LONG).show();
+                        sign = true;
+                   }
+                   else {
+                       em();
+                       tofb();
+                   }
            }
        });
        adb.setNegativeButton("continue", new DialogInterface.OnClickListener() {
