@@ -10,7 +10,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textSize="30dp"
         android:textColor="#ffffff"
         android:gravity="center"
@@ -18,7 +19,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
@@ -46,13 +48,15 @@
     <ListView
         android:id="@+id/menu"
         android:layout_width="match_parent"
-        android:layout_height="320dp">
+        android:layout_height="0dp"
+        android:layout_weight="10">
 
     </ListView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button

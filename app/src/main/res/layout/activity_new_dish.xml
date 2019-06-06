@@ -14,14 +14,16 @@
         android:gravity="center"
         android:textSize="35dp"
         android:textColor="#ffffff"
-        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_height="0dp"
         android:text="New Dish" />
 
     <EditText
         android:id="@+id/name"
         android:textColorHint="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Name" />
@@ -29,8 +31,9 @@
     <EditText
         android:id="@+id/price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:ems="10"
+        android:layout_weight="1"
         android:textColor="#ffffff"
         android:inputType="numberDecimal"
         android:textColorHint="#ffffff"
@@ -39,8 +42,9 @@
     <RadioGroup
         android:id="@+id/group"
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_height="wrap_content" >
+        android:layout_height="0dp" >
 
         <RadioButton
             android:id="@+id/main"
@@ -70,23 +74,27 @@
     <Button
         android:onClick="select"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="Select image" />
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="350dp"
-        android:layout_height="200dp" />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_weight="1"
+        android:layout_height="0dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button

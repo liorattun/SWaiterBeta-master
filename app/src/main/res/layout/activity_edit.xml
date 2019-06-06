@@ -9,10 +9,20 @@
     android:gravity="center"
     tools:context=".Edit">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="Edit "
+        android:textColor="#ffffff"
+        android:textSize="45dp" />
+
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         android:ems="10"
         android:textColorHint="#ffffff"
         android:hint="Name"
@@ -21,7 +31,8 @@
     <EditText
         android:id="@+id/price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         android:textColorHint="#ffffff"
         android:ems="10"
         android:hint="Price"
@@ -30,13 +41,15 @@
     <Button
         android:onClick="select"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         android:text="Select image" />
 
     <ImageView
         android:id="@+id/img"
+        android:layout_weight="1"
         android:layout_width="350dp"
-        android:layout_height="200dp" />
+        android:layout_height="0dp" />
 
 
 

@@ -9,30 +9,40 @@
     android:background="@drawable/back"
     tools:context=".Main">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:textSize="70dp"
         android:gravity="center"
         android:textColor="#ffffff"
         android:text="Swaiter" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="70dp" />
 
     <Button
         android:layout_width="match_parent"
         android:onClick="press1"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:text="customer" />
 
     <Button
         android:id="@+id/button3"
         android:onClick="press2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:text="Waiter manager" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
