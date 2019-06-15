@@ -24,7 +24,7 @@
         android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Name" />
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:ems="10"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:textColor="#ffffff"
         android:inputType="numberDecimal"
         android:textColorHint="#ffffff"
@@ -43,7 +43,7 @@
     <RadioGroup
         android:id="@+id/group"
         android:layout_width="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:orientation="horizontal"
         android:layout_height="0dp" >
 
@@ -76,7 +76,7 @@
         android:onClick="select"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:text="Select image" />
 
     <ImageView
@@ -95,7 +95,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:orientation="horizontal">
 
         <Button
